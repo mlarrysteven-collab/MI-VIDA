@@ -1,1 +1,1072 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mi Vida</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌞</text></svg>" />
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<style>
+*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.relative{position:relative}.mx-1{margin-left:.25rem;margin-right:.25rem}.mx-auto{margin-left:auto;margin-right:auto}.my-1{margin-top:.25rem;margin-bottom:.25rem}.my-3{margin-top:.75rem;margin-bottom:.75rem}.mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-0\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-2\.5{height:.625rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-\[30rem\]{height:30rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-16{width:4rem}.w-20{width:5rem}.w-24{width:6rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-fit{width:-moz-fit-content;width:fit-content}.w-full{width:100%}.w-px{width:1px}.min-w-\[8rem\]{min-width:8rem}.max-w-5xl{max-width:64rem}.max-w-\[85\%\]{max-width:85%}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1 1 0%}.resize-none{resize:none}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-start{justify-content:flex-start}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem*var(--tw-space-y-reverse))}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.75rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis}.truncate,.whitespace-nowrap{white-space:nowrap}.whitespace-pre-wrap{white-space:pre-wrap}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249/var(--tw-border-opacity,1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240/var(--tw-border-opacity,1))}.border-l-amber-300{--tw-border-opacity:1;border-left-color:rgb(252 211 77/var(--tw-border-opacity,1))}.border-l-sky-300{--tw-border-opacity:1;border-left-color:rgb(125 211 252/var(--tw-border-opacity,1))}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11/var(--tw-bg-opacity,1))}.bg-emerald-100{--tw-bg-opacity:1;background-color:rgb(209 250 229/var(--tw-bg-opacity,1))}.bg-emerald-500{--tw-bg-opacity:1;background-color:rgb(16 185 129/var(--tw-bg-opacity,1))}.bg-indigo-50{--tw-bg-opacity:1;background-color:rgb(238 242 255/var(--tw-bg-opacity,1))}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229/var(--tw-bg-opacity,1))}.bg-sky-500{--tw-bg-opacity:1;background-color:rgb(14 165 233/var(--tw-bg-opacity,1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249/var(--tw-bg-opacity,1))}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity,1))}.bg-slate-200\/60{background-color:rgba(226,232,240,.6)}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity,1))}.bg-violet-50{--tw-bg-opacity:1;background-color:rgb(245 243 255/var(--tw-bg-opacity,1))}.bg-violet-600{--tw-bg-opacity:1;background-color:rgb(124 58 237/var(--tw-bg-opacity,1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right,var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.from-amber-500{--tw-gradient-from:#f59e0b var(--tw-gradient-from-position);--tw-gradient-to:rgba(245,158,11,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-emerald-400{--tw-gradient-from:#34d399 var(--tw-gradient-from-position);--tw-gradient-to:rgba(52,211,153,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-indigo-500{--tw-gradient-from:#6366f1 var(--tw-gradient-from-position);--tw-gradient-to:rgba(99,102,241,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-indigo-600{--tw-gradient-from:#4f46e5 var(--tw-gradient-from-position);--tw-gradient-to:rgba(79,70,229,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-violet-500{--tw-gradient-from:#8b5cf6 var(--tw-gradient-from-position);--tw-gradient-to:rgba(139,92,246,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-violet-600{--tw-gradient-from:#7c3aed var(--tw-gradient-from-position);--tw-gradient-to:rgba(124,58,237,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-violet-600{--tw-gradient-to:rgba(124,58,237,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#7c3aed var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-fuchsia-500{--tw-gradient-to:#d946ef var(--tw-gradient-to-position)}.to-orange-500{--tw-gradient-to:#f97316 var(--tw-gradient-to-position)}.to-teal-500{--tw-gradient-to:#14b8a6 var(--tw-gradient-to-position)}.to-violet-500{--tw-gradient-to:#8b5cf6 var(--tw-gradient-to-position)}.p-0\.5{padding:.125rem}.p-1{padding:.25rem}.p-2{padding:.5rem}.p-3{padding:.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-7{padding:1.75rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-4{padding-bottom:1rem}.pt-1\.5{padding-top:.375rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.capitalize{text-transform:capitalize}.leading-none{line-height:1}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-.025em}.text-amber-100{--tw-text-opacity:1;color:rgb(254 243 199/var(--tw-text-opacity,1))}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11/var(--tw-text-opacity,1))}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6/var(--tw-text-opacity,1))}.text-emerald-500{--tw-text-opacity:1;color:rgb(16 185 129/var(--tw-text-opacity,1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105/var(--tw-text-opacity,1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87/var(--tw-text-opacity,1))}.text-indigo-100{--tw-text-opacity:1;color:rgb(224 231 255/var(--tw-text-opacity,1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229/var(--tw-text-opacity,1))}.text-indigo-700{--tw-text-opacity:1;color:rgb(67 56 202/var(--tw-text-opacity,1))}.text-rose-500{--tw-text-opacity:1;color:rgb(244 63 94/var(--tw-text-opacity,1))}.text-sky-600{--tw-text-opacity:1;color:rgb(2 132 199/var(--tw-text-opacity,1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225/var(--tw-text-opacity,1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184/var(--tw-text-opacity,1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity,1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85/var(--tw-text-opacity,1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59/var(--tw-text-opacity,1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.text-violet-100{--tw-text-opacity:1;color:rgb(237 233 254/var(--tw-text-opacity,1))}.text-violet-500{--tw-text-opacity:1;color:rgb(139 92 246/var(--tw-text-opacity,1))}.text-violet-700{--tw-text-opacity:1;color:rgb(109 40 217/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.line-through{text-decoration-line:line-through}.shadow-sm{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.hover\:bg-amber-600:hover{--tw-bg-opacity:1;background-color:rgb(217 119 6/var(--tw-bg-opacity,1))}.hover\:bg-emerald-200:hover{--tw-bg-opacity:1;background-color:rgb(167 243 208/var(--tw-bg-opacity,1))}.hover\:bg-emerald-600:hover{--tw-bg-opacity:1;background-color:rgb(5 150 105/var(--tw-bg-opacity,1))}.hover\:bg-indigo-700:hover{--tw-bg-opacity:1;background-color:rgb(67 56 202/var(--tw-bg-opacity,1))}.hover\:bg-sky-600:hover{--tw-bg-opacity:1;background-color:rgb(2 132 199/var(--tw-bg-opacity,1))}.hover\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity,1))}.hover\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252/var(--tw-bg-opacity,1))}.hover\:bg-violet-100:hover{--tw-bg-opacity:1;background-color:rgb(237 233 254/var(--tw-bg-opacity,1))}.hover\:bg-violet-700:hover{--tw-bg-opacity:1;background-color:rgb(109 40 217/var(--tw-bg-opacity,1))}.hover\:text-indigo-600:hover{--tw-text-opacity:1;color:rgb(79 70 229/var(--tw-text-opacity,1))}.hover\:text-rose-500:hover{--tw-text-opacity:1;color:rgb(244 63 94/var(--tw-text-opacity,1))}.hover\:text-rose-600:hover{--tw-text-opacity:1;color:rgb(225 29 72/var(--tw-text-opacity,1))}.focus\:border-amber-300:focus{--tw-border-opacity:1;border-color:rgb(252 211 77/var(--tw-border-opacity,1))}.focus\:border-amber-400:focus{--tw-border-opacity:1;border-color:rgb(251 191 36/var(--tw-border-opacity,1))}.focus\:border-emerald-400:focus{--tw-border-opacity:1;border-color:rgb(52 211 153/var(--tw-border-opacity,1))}.focus\:border-indigo-400:focus{--tw-border-opacity:1;border-color:rgb(129 140 248/var(--tw-border-opacity,1))}.focus\:border-sky-300:focus{--tw-border-opacity:1;border-color:rgb(125 211 252/var(--tw-border-opacity,1))}.focus\:border-violet-400:focus{--tw-border-opacity:1;border-color:rgb(167 139 250/var(--tw-border-opacity,1))}.disabled\:opacity-50:disabled{opacity:.5}@media (min-width:768px){.md\:sticky{position:sticky}.md\:top-0{top:0}.md\:block{display:block}.md\:flex{display:flex}.md\:min-h-screen{min-height:100vh}.md\:w-56{width:14rem}.md\:w-full{width:100%}.md\:flex-1{flex:1 1 0%}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:flex-row{flex-direction:row}.md\:flex-col{flex-direction:column}.md\:gap-3{gap:.75rem}.md\:border-r{border-right-width:1px}.md\:p-3{padding:.75rem}.md\:p-8{padding:2rem}.md\:text-sm{font-size:.875rem;line-height:1.25rem}}@media (min-width:1024px){.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+body { font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+</style>
+</head>
+<body class="bg-slate-100">
+<div id="root"></div>
+<script>
+const {
+  useState,
+  useEffect,
+  useRef
+} = React;
 
+// ==============================================================
+//  ⚙️  CONFIGURACIÓN  —  reemplaza estos dos valores (ver GUIA.md)
+// ==============================================================
+const SUPABASE_URL = "https://aqgoieervrninpmcvwuo.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFxZ29pZWVydnJuaW5wbWN2d3VvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2OTk0MDYsImV4cCI6MjEwMzI3NTQwNn0.-ljmZP0SRcsHBue1CfG6t0Ds9y4MrfBgd_LPhJDSkjI";
+// ==============================================================
+
+const CONFIGURADO = !SUPABASE_URL.includes("TU-PROYECTO");
+const sb = CONFIGURADO ? supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+
+// ---- Dinero ----
+const symbol = c => c === "USD" ? "US$" : "C$";
+const fmt = (n, c) => symbol(c) + Number(n || 0).toLocaleString("es-NI", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+const conv = (amount, from, to, rate) => {
+  const a = Number(amount) || 0;
+  if (from === to) return a;
+  if (from === "NIO" && to === "USD") return a / rate;
+  if (from === "USD" && to === "NIO") return a * rate;
+  return a;
+};
+const ahora = () => new Date().toLocaleString("es-NI", {
+  day: "numeric",
+  month: "short",
+  hour: "2-digit",
+  minute: "2-digit"
+});
+async function askAI(mensajes, system) {
+  const r = await fetch("/api/chat", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json"
+    },
+    body: JSON.stringify({
+      messages: mensajes,
+      system
+    })
+  });
+  const d = await r.json();
+  if (d.error) throw new Error(d.error);
+  return d.text;
+}
+const DEFAULTS = {
+  eventos: [{
+    id: 1,
+    hora: "09:00",
+    titulo: "Revisar correos"
+  }, {
+    id: 2,
+    hora: "15:00",
+    titulo: "Junta de equipo"
+  }],
+  tareas: [{
+    id: 1,
+    texto: "Comprar en el mercado",
+    hecho: false,
+    tipo: "personal"
+  }, {
+    id: 2,
+    texto: "Enviar reporte",
+    hecho: false,
+    tipo: "laboral"
+  }],
+  gastos: [{
+    id: 1,
+    desc: "Café",
+    monto: 60,
+    moneda: "NIO"
+  }],
+  deudas: [{
+    id: 1,
+    nombre: "Tarjeta de crédito",
+    total: 12000,
+    mensual: 1500,
+    pagado: 3000,
+    moneda: "NIO"
+  }],
+  metas: [{
+    id: 1,
+    titulo: "Ahorrar para un viaje",
+    progreso: 30
+  }],
+  diario: [],
+  historial: [],
+  displayCur: "NIO",
+  rate: 36.8
+};
+
+// ---- UI helpers ----
+function MonedaPicker({
+  value,
+  onChange
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "flex gap-1 bg-slate-100 rounded-lg p-0.5"
+  }, [["NIO", "C$"], ["USD", "US$"]].map(([v, l]) => /*#__PURE__*/React.createElement("button", {
+    key: v,
+    onClick: () => onChange(v),
+    className: "px-2.5 py-1 text-xs rounded-md font-semibold transition-all " + (value === v ? "bg-white text-slate-900 shadow-sm" : "text-slate-400")
+  }, l)));
+}
+function Titulo({
+  children,
+  sub
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "mb-5"
+  }, /*#__PURE__*/React.createElement("h2", {
+    className: "text-2xl font-bold text-slate-900 tracking-tight"
+  }, children), sub && /*#__PURE__*/React.createElement("p", {
+    className: "text-sm text-slate-500 mt-0.5"
+  }, sub));
+}
+function Card({
+  children,
+  className = ""
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "bg-white rounded-2xl border border-slate-200 shadow-sm " + className
+  }, children);
+}
+function VerEn({
+  displayCur,
+  setDisplayCur
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center gap-2"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-xs text-slate-400"
+  }, "Ver en"), /*#__PURE__*/React.createElement(MonedaPicker, {
+    value: displayCur,
+    onChange: setDisplayCur
+  }));
+}
+
+// ==============================================================
+//  RAÍZ: decide entre "configura", login, o la app
+// ==============================================================
+function Root() {
+  const [session, setSession] = useState(null);
+  const [authReady, setAuthReady] = useState(false);
+  useEffect(() => {
+    if (!CONFIGURADO) {
+      setAuthReady(true);
+      return;
+    }
+    sb.auth.getSession().then(({
+      data
+    }) => {
+      setSession(data.session);
+      setAuthReady(true);
+    });
+    const {
+      data: sub
+    } = sb.auth.onAuthStateChange((_e, s) => setSession(s));
+    return () => sub.subscription.unsubscribe();
+  }, []);
+  if (!CONFIGURADO) return /*#__PURE__*/React.createElement(ConfigNotice, null);
+  if (!authReady) return /*#__PURE__*/React.createElement(Centro, null, /*#__PURE__*/React.createElement("p", {
+    className: "text-slate-400 text-sm"
+  }, "Cargando…"));
+  if (!session) return /*#__PURE__*/React.createElement(Login, null);
+  return /*#__PURE__*/React.createElement(App, {
+    session: session
+  });
+}
+function Centro({
+  children
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "min-h-screen flex items-center justify-center p-4"
+  }, children);
+}
+function ConfigNotice() {
+  return /*#__PURE__*/React.createElement(Centro, null, /*#__PURE__*/React.createElement(Card, {
+    className: "p-6 max-w-md text-center"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "text-4xl mb-3"
+  }, "⚙️"), /*#__PURE__*/React.createElement("h1", {
+    className: "text-xl font-bold text-slate-900 mb-2"
+  }, "Falta un paso de configuración"), /*#__PURE__*/React.createElement("p", {
+    className: "text-sm text-slate-500"
+  }, "Abre ", /*#__PURE__*/React.createElement("code", {
+    className: "bg-slate-100 px-1 rounded"
+  }, "index.html"), " y reemplaza", /*#__PURE__*/React.createElement("code", {
+    className: "bg-slate-100 px-1 rounded mx-1"
+  }, "SUPABASE_URL"), " y", /*#__PURE__*/React.createElement("code", {
+    className: "bg-slate-100 px-1 rounded mx-1"
+  }, "SUPABASE_ANON_KEY"), " con los de tu proyecto. Sigue la ", /*#__PURE__*/React.createElement("b", null, "GUIA.md"), " paso a paso.")));
+}
+function Login() {
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [modo, setModo] = useState("entrar"); // entrar | crear
+  const [msg, setMsg] = useState("");
+  const [busy, setBusy] = useState(false);
+  async function submit() {
+    if (!email || !pass) {
+      setMsg("Escribe tu correo y contraseña.");
+      return;
+    }
+    setBusy(true);
+    setMsg("");
+    try {
+      if (modo === "crear") {
+        const {
+          error
+        } = await sb.auth.signUp({
+          email,
+          password: pass
+        });
+        if (error) throw error;
+        setMsg("¡Cuenta creada! Si te pide confirmar, revisa tu correo. Luego inicia sesión.");
+        setModo("entrar");
+      } else {
+        const {
+          error
+        } = await sb.auth.signInWithPassword({
+          email,
+          password: pass
+        });
+        if (error) throw error;
+      }
+    } catch (e) {
+      setMsg(e.message || "Ocurrió un error.");
+    } finally {
+      setBusy(false);
+    }
+  }
+  return /*#__PURE__*/React.createElement(Centro, null, /*#__PURE__*/React.createElement(Card, {
+    className: "p-7 w-full max-w-sm"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center gap-2 mb-5"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-lg"
+  }, "M"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", {
+    className: "font-bold text-slate-900 text-lg leading-tight"
+  }, "Mi Vida"), /*#__PURE__*/React.createElement("p", {
+    className: "text-xs text-slate-400"
+  }, "Tu día, en orden"))), /*#__PURE__*/React.createElement("input", {
+    value: email,
+    onChange: e => setEmail(e.target.value),
+    type: "email",
+    placeholder: "Correo",
+    className: "w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-indigo-400 mb-2"
+  }), /*#__PURE__*/React.createElement("input", {
+    value: pass,
+    onChange: e => setPass(e.target.value),
+    onKeyDown: e => e.key === "Enter" && submit(),
+    type: "password",
+    placeholder: "Contraseña",
+    className: "w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-indigo-400 mb-3"
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: submit,
+    disabled: busy,
+    className: "w-full bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white rounded-xl py-2.5 text-sm font-medium transition-colors"
+  }, busy ? "Un momento…" : modo === "crear" ? "Crear cuenta" : "Entrar"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setModo(modo === "crear" ? "entrar" : "crear");
+      setMsg("");
+    },
+    className: "w-full text-center text-xs text-slate-500 mt-3 hover:text-indigo-600"
+  }, modo === "crear" ? "Ya tengo cuenta — Entrar" : "Primera vez — Crear cuenta"), msg && /*#__PURE__*/React.createElement("p", {
+    className: "text-xs text-slate-500 mt-3 text-center"
+  }, msg)));
+}
+
+// ==============================================================
+//  APP con datos sincronizados
+// ==============================================================
+function App({
+  session
+}) {
+  const [tab, setTab] = useState("hoy");
+  const [data, setData] = useState(DEFAULTS);
+  const [estado, setEstado] = useState("cargando"); // cargando | listo | guardando | guardado
+  const loadedRef = useRef(false);
+
+  // Cargar de la nube al iniciar sesión
+  useEffect(() => {
+    loadedRef.current = false;
+    (async () => {
+      const {
+        data: row
+      } = await sb.from("estado").select("data").eq("user_id", session.user.id).maybeSingle();
+      if (row && row.data && Object.keys(row.data).length) {
+        setData({
+          ...DEFAULTS,
+          ...row.data
+        });
+      } else {
+        await sb.from("estado").upsert({
+          user_id: session.user.id,
+          data: DEFAULTS
+        });
+        setData(DEFAULTS);
+      }
+      loadedRef.current = true;
+      setEstado("listo");
+    })();
+  }, [session.user.id]);
+
+  // Guardar en la nube (con pequeña espera para no saturar)
+  useEffect(() => {
+    if (!loadedRef.current) return;
+    setEstado("guardando");
+    const t = setTimeout(async () => {
+      await sb.from("estado").upsert({
+        user_id: session.user.id,
+        data,
+        updated_at: new Date().toISOString()
+      });
+      setEstado("guardado");
+    }, 700);
+    return () => clearTimeout(t);
+  }, [data]);
+  const setField = (field, val) => setData(d => ({
+    ...d,
+    [field]: typeof val === "function" ? val(d[field]) : val
+  }));
+  const log = (icono, texto) => setField("historial", p => [{
+    id: Date.now() + Math.random(),
+    icono,
+    texto,
+    fecha: ahora()
+  }, ...p].slice(0, 300));
+  const props = {
+    log,
+    displayCur: data.displayCur,
+    setDisplayCur: v => setField("displayCur", v),
+    rate: data.rate,
+    setRate: v => setField("rate", v),
+    eventos: data.eventos,
+    setEventos: v => setField("eventos", v),
+    tareas: data.tareas,
+    setTareas: v => setField("tareas", v),
+    gastos: data.gastos,
+    setGastos: v => setField("gastos", v),
+    deudas: data.deudas,
+    setDeudas: v => setField("deudas", v),
+    metas: data.metas,
+    setMetas: v => setField("metas", v),
+    diario: data.diario,
+    setDiario: v => setField("diario", v),
+    historial: data.historial
+  };
+  const nav = [["hoy", "Hoy", "🏠"], ["tareas", "Tareas", "✅"], ["finanzas", "Finanzas", "💰"], ["metas", "Metas", "🎯"], ["diario", "Diario", "📔"], ["historial", "Historial", "🕘"], ["ia", "Asistente", "✨"], ["ajustes", "Ajustes", "⚙️"]];
+  const estadoTxt = {
+    cargando: "Cargando…",
+    listo: "Sincronizado",
+    guardando: "Guardando…",
+    guardado: "Guardado ✓"
+  }[estado];
+  return /*#__PURE__*/React.createElement("div", {
+    className: "min-h-screen bg-slate-100 text-slate-800"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-5xl mx-auto md:flex"
+  }, /*#__PURE__*/React.createElement("aside", {
+    className: "md:w-56 md:min-h-screen bg-white md:border-r border-slate-200 md:sticky md:top-0 flex flex-col"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "p-5 hidden md:block"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center gap-2"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold"
+  }, "M"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", {
+    className: "font-bold text-slate-900 leading-tight"
+  }, "Mi Vida"), /*#__PURE__*/React.createElement("p", {
+    className: "text-[11px] text-emerald-500"
+  }, estadoTxt)))), /*#__PURE__*/React.createElement("nav", {
+    className: "flex md:flex-col gap-1 p-2 md:p-3 overflow-x-auto md:flex-1"
+  }, nav.map(([id, label, emo]) => /*#__PURE__*/React.createElement("button", {
+    key: id,
+    onClick: () => setTab(id),
+    className: "flex md:w-full flex-col md:flex-row items-center gap-1 md:gap-3 px-3 py-2 rounded-xl text-xs md:text-sm font-medium whitespace-nowrap transition-all " + (tab === id ? "bg-indigo-50 text-indigo-700" : "text-slate-500 hover:bg-slate-50")
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-base"
+  }, emo), label))), /*#__PURE__*/React.createElement("div", {
+    className: "hidden md:block p-3 border-t border-slate-100"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "text-[11px] text-slate-400 truncate mb-1"
+  }, session.user.email), /*#__PURE__*/React.createElement("button", {
+    onClick: () => sb.auth.signOut(),
+    className: "text-xs text-slate-500 hover:text-rose-500"
+  }, "Cerrar sesión"))), /*#__PURE__*/React.createElement("main", {
+    className: "flex-1 p-4 md:p-8"
+  }, tab === "hoy" && /*#__PURE__*/React.createElement(Hoy, props), tab === "tareas" && /*#__PURE__*/React.createElement(Tareas, props), tab === "finanzas" && /*#__PURE__*/React.createElement(Finanzas, props), tab === "metas" && /*#__PURE__*/React.createElement(Metas, props), tab === "diario" && /*#__PURE__*/React.createElement(Diario, props), tab === "historial" && /*#__PURE__*/React.createElement(Historial, {
+    historial: data.historial
+  }), tab === "ia" && /*#__PURE__*/React.createElement(IA, props), tab === "ajustes" && /*#__PURE__*/React.createElement(Ajustes, {
+    data: data,
+    setData: setData,
+    session: session
+  }))));
+}
+function Hoy({
+  eventos,
+  setEventos,
+  tareas,
+  gastos,
+  deudas,
+  metas,
+  displayCur,
+  setDisplayCur,
+  rate,
+  log
+}) {
+  const [hora, setHora] = useState("");
+  const [titulo, setTitulo] = useState("");
+  const pendientes = tareas.filter(t => !t.hecho).length;
+  const totalGastos = gastos.reduce((s, g) => s + conv(g.monto, g.moneda, displayCur, rate), 0);
+  const deudaTotal = deudas.reduce((s, d) => s + conv(d.total - d.pagado, d.moneda, displayCur, rate), 0);
+  function agregar() {
+    if (!titulo.trim()) return;
+    setEventos(p => [...p, {
+      id: Date.now(),
+      hora: hora || "12:00",
+      titulo
+    }].sort((a, b) => a.hora.localeCompare(b.hora)));
+    log("📅", "Evento: " + titulo);
+    setHora("");
+    setTitulo("");
+  }
+  const stats = [["Pendientes", pendientes, "text-rose-500"], ["Gasto hoy", fmt(totalGastos, displayCur), "text-amber-500"], ["Deuda restante", fmt(deudaTotal, displayCur), "text-violet-500"], ["Metas activas", metas.length, "text-emerald-500"]];
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "rounded-3xl bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-500 p-6 md:p-8 text-white mb-6"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "text-indigo-100 text-sm capitalize"
+  }, new Date().toLocaleDateString("es-NI", {
+    weekday: "long",
+    day: "numeric",
+    month: "long"
+  })), /*#__PURE__*/React.createElement("h2", {
+    className: "text-3xl font-bold mt-1"
+  }, "Hola de nuevo 👋"), /*#__PURE__*/React.createElement("p", {
+    className: "text-indigo-100 mt-1 text-sm"
+  }, "Este es tu resumen de hoy.")), /*#__PURE__*/React.createElement("div", {
+    className: "flex justify-end mb-3"
+  }, /*#__PURE__*/React.createElement(VerEn, {
+    displayCur: displayCur,
+    setDisplayCur: setDisplayCur
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6"
+  }, stats.map(([label, valor, color]) => /*#__PURE__*/React.createElement(Card, {
+    key: label,
+    className: "p-4"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "text-xs text-slate-400"
+  }, label), /*#__PURE__*/React.createElement("p", {
+    className: "text-xl font-bold mt-1 " + color
+  }, valor)))), /*#__PURE__*/React.createElement(Titulo, {
+    sub: "Tu agenda del día"
+  }, "Agenda"), /*#__PURE__*/React.createElement(Card, {
+    className: "p-3 flex gap-2 mb-4"
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "time",
+    value: hora,
+    onChange: e => setHora(e.target.value),
+    className: "bg-slate-50 border border-slate-200 rounded-lg px-2 py-2 text-sm outline-none"
+  }), /*#__PURE__*/React.createElement("input", {
+    value: titulo,
+    onChange: e => setTitulo(e.target.value),
+    onKeyDown: e => e.key === "Enter" && agregar(),
+    placeholder: "Nuevo evento",
+    className: "flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-indigo-400"
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: agregar,
+    className: "bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg px-3 transition-colors"
+  }, "＋")), /*#__PURE__*/React.createElement("div", {
+    className: "space-y-2"
+  }, eventos.length === 0 && /*#__PURE__*/React.createElement("p", {
+    className: "text-center text-sm text-slate-400 py-6"
+  }, "Sin eventos hoy"), eventos.map(e => /*#__PURE__*/React.createElement(Card, {
+    key: e.id,
+    className: "p-3 flex items-center gap-3"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center gap-1.5 text-indigo-600 font-semibold text-sm w-16"
+  }, "🕐 ", e.hora), /*#__PURE__*/React.createElement("span", {
+    className: "flex-1 text-sm"
+  }, e.titulo), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setEventos(p => p.filter(x => x.id !== e.id)),
+    className: "text-slate-300 hover:text-rose-500 transition-colors"
+  }, "🗑")))));
+}
+function Tareas({
+  tareas,
+  setTareas,
+  log
+}) {
+  const [tipo, setTipo] = useState("personal");
+  const [texto, setTexto] = useState("");
+  const lista = tareas.filter(t => t.tipo === tipo);
+  function agregar() {
+    if (!texto.trim()) return;
+    setTareas(p => [...p, {
+      id: Date.now(),
+      texto,
+      hecho: false,
+      tipo
+    }]);
+    log(tipo === "laboral" ? "💼" : "🙂", "Tarea " + tipo + ": " + texto);
+    setTexto("");
+  }
+  function toggle(id) {
+    setTareas(p => p.map(t => {
+      if (t.id === id) {
+        if (!t.hecho) log("✅", "Completaste: " + t.texto);
+        return {
+          ...t,
+          hecho: !t.hecho
+        };
+      }
+      return t;
+    }));
+  }
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Titulo, {
+    sub: "Separa lo personal de lo laboral"
+  }, "Tareas"), /*#__PURE__*/React.createElement("div", {
+    className: "flex gap-1 bg-slate-200/60 rounded-xl p-1 mb-4 w-fit"
+  }, [["personal", "Personales", "🙂"], ["laboral", "Laborales", "💼"]].map(([id, label, emo]) => /*#__PURE__*/React.createElement("button", {
+    key: id,
+    onClick: () => setTipo(id),
+    className: "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all " + (tipo === id ? "bg-white text-slate-900 shadow-sm" : "text-slate-500")
+  }, /*#__PURE__*/React.createElement("span", null, emo), " ", label))), /*#__PURE__*/React.createElement(Card, {
+    className: "p-3 flex gap-2 mb-4"
+  }, /*#__PURE__*/React.createElement("input", {
+    value: texto,
+    onChange: e => setTexto(e.target.value),
+    onKeyDown: e => e.key === "Enter" && agregar(),
+    placeholder: "Nueva tarea " + tipo,
+    className: "flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-indigo-400"
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: agregar,
+    className: "bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg px-3 transition-colors"
+  }, "＋")), /*#__PURE__*/React.createElement("div", {
+    className: "space-y-2"
+  }, lista.length === 0 && /*#__PURE__*/React.createElement("p", {
+    className: "text-center text-sm text-slate-400 py-6"
+  }, "Nada por aquí todavía"), lista.map(t => /*#__PURE__*/React.createElement(Card, {
+    key: t.id,
+    className: "p-3 flex items-center gap-3"
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => toggle(t.id),
+    className: "text-xl leading-none"
+  }, t.hecho ? "✅" : "⚪"), /*#__PURE__*/React.createElement("span", {
+    className: "flex-1 text-sm " + (t.hecho ? "line-through text-slate-400" : "")
+  }, t.texto), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setTareas(p => p.filter(x => x.id !== t.id)),
+    className: "text-slate-300 hover:text-rose-500 transition-colors"
+  }, "🗑")))));
+}
+function Finanzas({
+  gastos,
+  setGastos,
+  deudas,
+  setDeudas,
+  displayCur,
+  setDisplayCur,
+  rate,
+  setRate,
+  log
+}) {
+  const [desc, setDesc] = useState("");
+  const [monto, setMonto] = useState("");
+  const [gCur, setGCur] = useState("NIO");
+  const totalGastos = gastos.reduce((s, g) => s + conv(g.monto, g.moneda, displayCur, rate), 0);
+  const [dn, setDn] = useState("");
+  const [dt, setDt] = useState("");
+  const [dm, setDm] = useState("");
+  const [dCur, setDCur] = useState("NIO");
+  const mensualTotal = deudas.reduce((s, d) => s + conv(d.mensual, d.moneda, displayCur, rate), 0);
+  function addGasto() {
+    if (!desc.trim() || !monto) return;
+    setGastos(p => [...p, {
+      id: Date.now(),
+      desc,
+      monto: Number(monto),
+      moneda: gCur
+    }]);
+    log("💸", "Gasto: " + desc + " " + fmt(monto, gCur));
+    setDesc("");
+    setMonto("");
+  }
+  function addDeuda() {
+    if (!dn.trim() || !dt) return;
+    setDeudas(p => [...p, {
+      id: Date.now(),
+      nombre: dn,
+      total: Number(dt),
+      mensual: Number(dm) || 0,
+      pagado: 0,
+      moneda: dCur
+    }]);
+    log("🏦", "Nueva deuda: " + dn);
+    setDn("");
+    setDt("");
+    setDm("");
+  }
+  function abonar(id) {
+    const d = deudas.find(x => x.id === id);
+    setDeudas(p => p.map(x => x.id === id ? {
+      ...x,
+      pagado: Math.min(x.total, x.pagado + x.mensual)
+    } : x));
+    if (d) log("✔️", "Abono a " + d.nombre + ": " + fmt(d.mensual, d.moneda));
+  }
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Titulo, {
+    sub: "Gastos, deudas y pagos — en córdobas y dólares"
+  }, "Finanzas"), /*#__PURE__*/React.createElement(Card, {
+    className: "p-3 flex flex-wrap items-center justify-between gap-3 mb-4"
+  }, /*#__PURE__*/React.createElement(VerEn, {
+    displayCur: displayCur,
+    setDisplayCur: setDisplayCur
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center gap-2"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-xs text-slate-400"
+  }, "Tipo de cambio C$/US$"), /*#__PURE__*/React.createElement("input", {
+    type: "number",
+    value: rate,
+    onChange: e => setRate(Number(e.target.value) || 0),
+    step: "0.01",
+    className: "w-20 bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 text-sm outline-none focus:border-indigo-400"
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "grid md:grid-cols-2 gap-3 mb-6"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 p-5 text-white"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "text-amber-100 text-sm"
+  }, "Gasto de hoy"), /*#__PURE__*/React.createElement("p", {
+    className: "text-3xl font-bold mt-1"
+  }, fmt(totalGastos, displayCur))), /*#__PURE__*/React.createElement("div", {
+    className: "rounded-2xl bg-gradient-to-br from-violet-600 to-fuchsia-500 p-5 text-white"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "text-violet-100 text-sm"
+  }, "Compromiso mensual (deudas)"), /*#__PURE__*/React.createElement("p", {
+    className: "text-3xl font-bold mt-1"
+  }, fmt(mensualTotal, displayCur)))), /*#__PURE__*/React.createElement("h3", {
+    className: "font-semibold text-slate-700 mb-2"
+  }, "Gastos del día"), /*#__PURE__*/React.createElement(Card, {
+    className: "p-3 flex flex-wrap gap-2 mb-3 items-center"
+  }, /*#__PURE__*/React.createElement("input", {
+    value: desc,
+    onChange: e => setDesc(e.target.value),
+    placeholder: "¿En qué gastaste?",
+    className: "flex-1 min-w-[8rem] bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-amber-400"
+  }), /*#__PURE__*/React.createElement("input", {
+    type: "number",
+    value: monto,
+    onChange: e => setMonto(e.target.value),
+    onKeyDown: e => e.key === "Enter" && addGasto(),
+    placeholder: "Monto",
+    className: "w-24 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-amber-400"
+  }), /*#__PURE__*/React.createElement(MonedaPicker, {
+    value: gCur,
+    onChange: setGCur
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: addGasto,
+    className: "bg-amber-500 hover:bg-amber-600 text-white rounded-lg px-3 transition-colors"
+  }, "＋")), /*#__PURE__*/React.createElement("div", {
+    className: "space-y-2 mb-8"
+  }, gastos.map(g => /*#__PURE__*/React.createElement(Card, {
+    key: g.id,
+    className: "p-3 flex items-center gap-3"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "flex-1 text-sm"
+  }, g.desc), /*#__PURE__*/React.createElement("span", {
+    className: "text-[11px] text-slate-400"
+  }, symbol(g.moneda)), /*#__PURE__*/React.createElement("span", {
+    className: "text-sm font-semibold"
+  }, fmt(g.monto, g.moneda)), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setGastos(p => p.filter(x => x.id !== g.id)),
+    className: "text-slate-300 hover:text-rose-500 transition-colors"
+  }, "🗑")))), /*#__PURE__*/React.createElement("h3", {
+    className: "font-semibold text-slate-700 mb-2"
+  }, "Deudas y pagos mensuales"), /*#__PURE__*/React.createElement(Card, {
+    className: "p-3 flex flex-wrap gap-2 mb-3 items-center"
+  }, /*#__PURE__*/React.createElement("input", {
+    value: dn,
+    onChange: e => setDn(e.target.value),
+    placeholder: "Nombre (ej. Tarjeta)",
+    className: "flex-1 min-w-[8rem] bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-violet-400"
+  }), /*#__PURE__*/React.createElement("input", {
+    type: "number",
+    value: dt,
+    onChange: e => setDt(e.target.value),
+    placeholder: "Total",
+    className: "w-24 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-violet-400"
+  }), /*#__PURE__*/React.createElement("input", {
+    type: "number",
+    value: dm,
+    onChange: e => setDm(e.target.value),
+    placeholder: "Mensual",
+    className: "w-24 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-violet-400"
+  }), /*#__PURE__*/React.createElement(MonedaPicker, {
+    value: dCur,
+    onChange: setDCur
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: addDeuda,
+    className: "bg-violet-600 hover:bg-violet-700 text-white rounded-lg px-4 text-sm font-medium transition-colors"
+  }, "Agregar")), /*#__PURE__*/React.createElement("div", {
+    className: "space-y-3"
+  }, deudas.map(d => {
+    const pct = Math.round(d.pagado / d.total * 100) || 0;
+    return /*#__PURE__*/React.createElement(Card, {
+      key: d.id,
+      className: "p-4"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "flex items-center justify-between mb-2"
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+      className: "font-semibold text-slate-800"
+    }, d.nombre), /*#__PURE__*/React.createElement("p", {
+      className: "text-xs text-slate-400"
+    }, "📉 ", fmt(d.mensual, d.moneda), "/mes · restan ", fmt(d.total - d.pagado, d.moneda))), /*#__PURE__*/React.createElement("button", {
+      onClick: () => setDeudas(p => p.filter(x => x.id !== d.id)),
+      className: "text-slate-300 hover:text-rose-500 transition-colors"
+    }, "🗑")), /*#__PURE__*/React.createElement("div", {
+      className: "h-2.5 bg-slate-100 rounded-full overflow-hidden"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "h-full bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all",
+      style: {
+        width: pct + "%"
+      }
+    })), /*#__PURE__*/React.createElement("div", {
+      className: "flex items-center justify-between mt-2"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "text-xs text-slate-500"
+    }, pct, "% pagado"), /*#__PURE__*/React.createElement("button", {
+      onClick: () => abonar(d.id),
+      className: "text-xs bg-violet-50 text-violet-700 hover:bg-violet-100 rounded-lg px-3 py-1.5 font-medium transition-colors"
+    }, "Registrar pago mensual")));
+  })));
+}
+function Metas({
+  metas,
+  setMetas,
+  log
+}) {
+  const [titulo, setTitulo] = useState("");
+  function agregar() {
+    if (!titulo.trim()) return;
+    setMetas(p => [...p, {
+      id: Date.now(),
+      titulo,
+      progreso: 0
+    }]);
+    log("🎯", "Nueva meta: " + titulo);
+    setTitulo("");
+  }
+  function ajustar(id, delta) {
+    setMetas(p => p.map(m => {
+      if (m.id === id) {
+        const np = Math.max(0, Math.min(100, m.progreso + delta));
+        if (np === 100 && m.progreso !== 100) log("🏆", "¡Meta lograda: " + m.titulo + "!");
+        return {
+          ...m,
+          progreso: np
+        };
+      }
+      return m;
+    }));
+  }
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Titulo, {
+    sub: "Hacia dónde quieres llegar"
+  }, "Metas"), /*#__PURE__*/React.createElement(Card, {
+    className: "p-3 flex gap-2 mb-4"
+  }, /*#__PURE__*/React.createElement("input", {
+    value: titulo,
+    onChange: e => setTitulo(e.target.value),
+    onKeyDown: e => e.key === "Enter" && agregar(),
+    placeholder: "Nueva meta",
+    className: "flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-emerald-400"
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: agregar,
+    className: "bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg px-3 transition-colors"
+  }, "＋")), /*#__PURE__*/React.createElement("div", {
+    className: "grid md:grid-cols-2 gap-3"
+  }, metas.map(m => /*#__PURE__*/React.createElement(Card, {
+    key: m.id,
+    className: "p-4"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-start justify-between"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "font-semibold text-slate-800 flex-1"
+  }, m.titulo), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setMetas(p => p.filter(x => x.id !== m.id)),
+    className: "text-slate-300 hover:text-rose-500 transition-colors"
+  }, "🗑")), /*#__PURE__*/React.createElement("div", {
+    className: "h-2.5 bg-slate-100 rounded-full overflow-hidden my-3"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "h-full bg-gradient-to-r from-emerald-400 to-teal-500 transition-all",
+    style: {
+      width: m.progreso + "%"
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center justify-between"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-sm font-bold text-emerald-600"
+  }, m.progreso, "%"), /*#__PURE__*/React.createElement("div", {
+    className: "flex gap-1"
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => ajustar(m.id, -10),
+    className: "w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors"
+  }, "−"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => ajustar(m.id, 10),
+    className: "w-8 h-8 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-emerald-700 transition-colors"
+  }, "+")))))));
+}
+function Diario({
+  diario,
+  setDiario,
+  log
+}) {
+  const [modo, setModo] = useState("bien");
+  const [texto, setTexto] = useState("");
+  const lista = diario.filter(d => d.tipo === modo);
+  const esBien = modo === "bien";
+  function agregar() {
+    if (!texto.trim()) return;
+    setDiario(p => [{
+      id: Date.now(),
+      texto,
+      tipo: modo,
+      fecha: ahora()
+    }, ...p]);
+    log(esBien ? "💛" : "🌧️", (esBien ? "Gratitud" : "Momento difícil") + ": " + texto);
+    setTexto("");
+  }
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Titulo, {
+    sub: "Un espacio para lo bueno y lo difícil de tu día"
+  }, "Diario"), /*#__PURE__*/React.createElement("div", {
+    className: "flex gap-1 bg-slate-200/60 rounded-xl p-1 mb-4 w-fit"
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => setModo("bien"),
+    className: "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all " + (esBien ? "bg-white text-amber-600 shadow-sm" : "text-slate-500")
+  }, "☀️ Me sentí bien"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setModo("mal"),
+    className: "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all " + (!esBien ? "bg-white text-sky-600 shadow-sm" : "text-slate-500")
+  }, "🌧️ Me sentí mal")), /*#__PURE__*/React.createElement(Card, {
+    className: "p-3 mb-4"
+  }, /*#__PURE__*/React.createElement("textarea", {
+    value: texto,
+    onChange: e => setTexto(e.target.value),
+    rows: 2,
+    placeholder: esBien ? "Hoy me sentí gratificado por..." : "Hoy me sentí mal porque...",
+    className: "w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none resize-none " + (esBien ? "focus:border-amber-300" : "focus:border-sky-300")
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center justify-between mt-2"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "text-xs text-slate-400"
+  }, esBien ? "Reconocer lo bueno ayuda a recordarlo." : "Escribir lo que pesa suele aligerarlo un poco."), /*#__PURE__*/React.createElement("button", {
+    onClick: agregar,
+    className: "text-white rounded-lg px-4 py-1.5 text-sm font-medium transition-colors " + (esBien ? "bg-amber-500 hover:bg-amber-600" : "bg-sky-500 hover:bg-sky-600")
+  }, "Guardar"))), /*#__PURE__*/React.createElement("div", {
+    className: "space-y-2"
+  }, lista.length === 0 && /*#__PURE__*/React.createElement("p", {
+    className: "text-center text-sm text-slate-400 py-6"
+  }, esBien ? "Empieza a registrar tus buenos momentos 💛" : "Aquí puedes soltar lo que te haya pesado hoy 🌧️"), lista.map(d => /*#__PURE__*/React.createElement(Card, {
+    key: d.id,
+    className: "p-4 border-l-4 " + (esBien ? "border-l-amber-300" : "border-l-sky-300")
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "text-sm text-slate-700 whitespace-pre-wrap"
+  }, d.texto), /*#__PURE__*/React.createElement("p", {
+    className: "text-xs text-slate-400 mt-1"
+  }, d.fecha)))));
+}
+function Historial({
+  historial
+}) {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Titulo, {
+    sub: "Todo lo que has registrado"
+  }, "Historial"), historial.length === 0 && /*#__PURE__*/React.createElement("p", {
+    className: "text-center text-sm text-slate-400 py-8"
+  }, "Aún no hay actividad. ¡Empieza a usar la app!"), /*#__PURE__*/React.createElement("div", {
+    className: "relative"
+  }, historial.map((h, i) => /*#__PURE__*/React.createElement("div", {
+    key: h.id,
+    className: "flex gap-3 pb-4"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-col items-center"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "w-9 h-9 rounded-full bg-white border border-slate-200 flex items-center justify-center text-base shadow-sm"
+  }, h.icono), i < historial.length - 1 && /*#__PURE__*/React.createElement("div", {
+    className: "w-px flex-1 bg-slate-200 my-1"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "pt-1.5"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "text-sm text-slate-700"
+  }, h.texto), /*#__PURE__*/React.createElement("p", {
+    className: "text-xs text-slate-400"
+  }, h.fecha))))));
+}
+function IA({
+  eventos,
+  tareas,
+  gastos,
+  deudas,
+  metas,
+  displayCur,
+  rate
+}) {
+  const [mensajes, setMensajes] = useState([{
+    role: "assistant",
+    content: "¡Hola! Conozco tu día completo, en córdobas y dólares. Puedo ayudarte a priorizar, planear tus pagos o darte ánimo. ¿Qué necesitas?"
+  }]);
+  const [input, setInput] = useState("");
+  const [busy, setBusy] = useState(false);
+  const endRef = useRef(null);
+  useEffect(() => endRef.current?.scrollIntoView({
+    behavior: "smooth"
+  }), [mensajes]);
+  async function enviar() {
+    if (!input.trim() || busy) return;
+    const um = {
+      role: "user",
+      content: input
+    };
+    const nuevos = [...mensajes, um];
+    setMensajes(nuevos);
+    setInput("");
+    setBusy(true);
+    try {
+      const ctx = "Datos del usuario (tipo de cambio C$" + rate + "/US$1):\n" + "Agenda: " + (eventos.map(e => e.hora + " " + e.titulo).join(", ") || "vacía") + ".\n" + "Tareas pendientes: " + (tareas.filter(t => !t.hecho).map(t => t.texto + " (" + t.tipo + ")").join(", ") || "ninguna") + ".\n" + "Gastos hoy: " + (gastos.map(g => g.desc + " " + fmt(g.monto, g.moneda)).join(", ") || "ninguno") + ".\n" + "Deudas: " + (deudas.map(d => d.nombre + " restan " + fmt(d.total - d.pagado, d.moneda) + ", " + fmt(d.mensual, d.moneda) + "/mes").join(", ") || "ninguna") + ".\n" + "Metas: " + (metas.map(m => m.titulo + " " + m.progreso + "%").join(", ") || "ninguna") + ".";
+      const system = "Eres un asistente personal cálido, breve y práctico, de Nicaragua. Ayudas a organizar el día, priorizar tareas y manejar finanzas personales en córdobas (C$) y dólares (US$), sin dar consejos de inversión. Responde en español, conciso. " + ctx;
+      const resp = await askAI(nuevos.slice(1), system); // sin el saludo inicial
+      setMensajes(p => [...p, {
+        role: "assistant",
+        content: resp
+      }]);
+    } catch (e) {
+      setMensajes(p => [...p, {
+        role: "assistant",
+        content: "Ups, no pude conectar con la IA. Revisa que la clave esté configurada en Vercel. (" + e.message + ")"
+      }]);
+    } finally {
+      setBusy(false);
+    }
+  }
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Titulo, {
+    sub: "Conoce todo tu contexto"
+  }, "Asistente"), /*#__PURE__*/React.createElement(Card, {
+    className: "flex flex-col h-[30rem]"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex-1 overflow-y-auto p-4 space-y-3"
+  }, mensajes.map((m, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "flex " + (m.role === "user" ? "justify-end" : "justify-start")
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm whitespace-pre-wrap " + (m.role === "user" ? "bg-indigo-600 text-white" : "bg-slate-100 text-slate-800")
+  }, m.content))), busy && /*#__PURE__*/React.createElement("div", {
+    className: "flex justify-start"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "bg-slate-100 rounded-2xl px-4 py-3 text-slate-400 text-sm"
+  }, "Escribiendo…")), /*#__PURE__*/React.createElement("div", {
+    ref: endRef
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "border-t border-slate-100 p-3 flex gap-2"
+  }, /*#__PURE__*/React.createElement("input", {
+    value: input,
+    onChange: e => setInput(e.target.value),
+    onKeyDown: e => e.key === "Enter" && enviar(),
+    placeholder: "Pregúntame algo...",
+    className: "flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-indigo-400"
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: enviar,
+    disabled: busy,
+    className: "bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white rounded-xl px-4 transition-colors"
+  }, "➤"))));
+}
+function Ajustes({
+  data,
+  setData,
+  session
+}) {
+  const [msg, setMsg] = useState("");
+  const fileRef = useRef(null);
+  function exportar() {
+    const blob = new Blob([JSON.stringify(data, null, 2)], {
+      type: "application/json"
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "mi-vida-respaldo-" + new Date().toISOString().slice(0, 10) + ".json";
+    a.click();
+    URL.revokeObjectURL(url);
+    setMsg("Respaldo descargado ✓");
+  }
+  function importar(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const nuevo = JSON.parse(reader.result);
+        setData({
+          ...DEFAULTS,
+          ...nuevo
+        });
+        setMsg("Datos importados y sincronizados ✓");
+      } catch {
+        setMsg("Ese archivo no es un respaldo válido.");
+      }
+    };
+    reader.readAsText(file);
+  }
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Titulo, {
+    sub: "Respaldo, cuenta y sincronización"
+  }, "Ajustes"), /*#__PURE__*/React.createElement(Card, {
+    className: "p-5 mb-4"
+  }, /*#__PURE__*/React.createElement("h3", {
+    className: "font-semibold text-slate-800 mb-1"
+  }, "Respaldo de datos"), /*#__PURE__*/React.createElement("p", {
+    className: "text-sm text-slate-500 mb-3"
+  }, "Tus datos ya se guardan en la nube y se sincronizan entre tus dispositivos. Aun así, puedes bajar una copia por seguridad."), /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-wrap gap-2"
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: exportar,
+    className: "bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+  }, "⬇ Exportar respaldo"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => fileRef.current.click(),
+    className: "bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+  }, "⬆ Importar respaldo"), /*#__PURE__*/React.createElement("input", {
+    ref: fileRef,
+    type: "file",
+    accept: "application/json",
+    onChange: importar,
+    className: "hidden"
+  })), msg && /*#__PURE__*/React.createElement("p", {
+    className: "text-xs text-emerald-600 mt-3"
+  }, msg)), /*#__PURE__*/React.createElement(Card, {
+    className: "p-5"
+  }, /*#__PURE__*/React.createElement("h3", {
+    className: "font-semibold text-slate-800 mb-1"
+  }, "Cuenta"), /*#__PURE__*/React.createElement("p", {
+    className: "text-sm text-slate-500 mb-3"
+  }, "Sesión iniciada como ", /*#__PURE__*/React.createElement("b", null, session.user.email), ". Entra con este mismo correo en tu teléfono para ver todo sincronizado."), /*#__PURE__*/React.createElement("button", {
+    onClick: () => sb.auth.signOut(),
+    className: "text-sm text-rose-500 hover:text-rose-600 font-medium"
+  }, "Cerrar sesión")));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(Root, null));
+</script>
+</body>
+</html>
